@@ -14,4 +14,15 @@ final class HelloWorldViewControllerTests: FBSnapshotTestCase {
 
         FBSnapshotVerifyView(viewController.view)
     }
+
+    func test_displayMessageWithMessage_displaysTheMessage() {
+        let bundle = Bundle(for: ViewController.self)
+        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+        let viewController = storyboard.instantiateInitialViewController() as! ViewController
+
+        viewController.loadViewIfNeeded()
+        viewController.display(message: "A simple message")
+
+        FBSnapshotVerifyView(viewController.view)
+    }
 }
