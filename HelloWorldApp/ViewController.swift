@@ -15,4 +15,10 @@ class ViewController: UIViewController {
         labelMessage.text = message
         labelMessage.textColor = .systemGreen
     }
+
+    func display(errorMessage: String) {
+        labelMessage.text = errorMessage
+        labelMessage.textColor = .systemRed
+        labelMessage.font = .preferredFont(forTextStyle: .title1)
+    }
 }
