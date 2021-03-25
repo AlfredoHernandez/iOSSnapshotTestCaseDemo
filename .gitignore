@@ -1,4 +1,3 @@
-
 # Created by https://www.toptal.com/developers/gitignore/api/swift,xcode,carthage,cocoapods,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=swift,xcode,carthage,cocoapods,macos
 
@@ -148,3 +147,6 @@ iOSInjectionProject/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode,carthage,cocoapods,macos
+
+# Snapshot tests
+HelloWorldAppTests/FailureDiffs
