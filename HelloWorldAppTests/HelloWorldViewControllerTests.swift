@@ -6,11 +6,11 @@ import FBSnapshotTestCase
 @testable import HelloWorldApp
 import XCTest
 
-final class HelloWorldViewControllerTests: FBSnapshotTestCase {
+final class HelloWorldViewControllerTests: SnaphshotTestCase {
     func test_view_displaysHelloWorldMessage() {
         let sut = makeSUT()
 
-        FBSnapshotVerifyView(sut.view)
+        assert(sut)
     }
 
     func test_displayMessageWithMessage_displaysTheMessage() {
@@ -18,7 +18,7 @@ final class HelloWorldViewControllerTests: FBSnapshotTestCase {
 
         sut.display(message: "A simple message")
 
-        FBSnapshotVerifyView(sut.view)
+        assert(sut)
     }
 
     func test_displayErrorMessageWithMessage_displaysTheMessage() {
@@ -26,7 +26,7 @@ final class HelloWorldViewControllerTests: FBSnapshotTestCase {
 
         sut.display(errorMessage: "An error message :(")
 
-        FBSnapshotVerifyView(sut.view)
+        assert(sut)
     }
 
     // MARK: - Helpers
