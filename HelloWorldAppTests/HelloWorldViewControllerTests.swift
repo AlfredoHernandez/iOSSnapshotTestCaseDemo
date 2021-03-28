@@ -8,32 +8,36 @@ import XCTest
 
 final class HelloWorldViewControllerTests: FBSnapshotTestCase {
     func test_view_displaysHelloWorldMessage() {
-        let bundle = Bundle(for: ViewController.self)
-        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
-        let viewController = storyboard.instantiateInitialViewController() as! ViewController
+        let sut = makeSUT()
 
-        FBSnapshotVerifyView(viewController.view)
+        FBSnapshotVerifyView(sut.view)
     }
 
     func test_displayMessageWithMessage_displaysTheMessage() {
-        let bundle = Bundle(for: ViewController.self)
-        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
-        let viewController = storyboard.instantiateInitialViewController() as! ViewController
+        let sut = makeSUT()
 
-        viewController.loadViewIfNeeded()
-        viewController.display(message: "A simple message")
+        sut.display(message: "A simple message")
 
-        FBSnapshotVerifyView(viewController.view)
+        FBSnapshotVerifyView(sut.view)
     }
 
     func test_displayErrorMessageWithMessage_displaysTheMessage() {
+        let sut = makeSUT()
+
+        sut.display(errorMessage: "An error message :(")
+
+        FBSnapshotVerifyView(sut.view)
+    }
+
+    // MARK: - Helpers
+
+    private func makeSUT() -> ViewController {
         let bundle = Bundle(for: ViewController.self)
         let storyboard = UIStoryboard(name: "Main", bundle: bundle)
         let viewController = storyboard.instantiateInitialViewController() as! ViewController
 
         viewController.loadViewIfNeeded()
-        viewController.display(errorMessage: "An error message :(")
 
-        FBSnapshotVerifyView(viewController.view)
+        return viewController
     }
 }
