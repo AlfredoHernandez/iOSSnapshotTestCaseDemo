@@ -10,7 +10,8 @@ final class HelloWorldViewControllerTests: SnaphshotTestCase {
     func test_view_displaysHelloWorldMessage() {
         let sut = makeSUT()
 
-        assert(sut)
+        assert(sut, mode: .light, identifier: "light")
+        assert(sut, mode: .dark, identifier: "dark")
     }
 
     func test_displayMessageWithMessage_displaysTheMessage() {
@@ -18,7 +19,8 @@ final class HelloWorldViewControllerTests: SnaphshotTestCase {
 
         sut.display(message: "A simple message")
 
-        assert(sut)
+        assert(sut, mode: .light, identifier: "light")
+        assert(sut, mode: .dark, identifier: "dark")
     }
 
     func test_displayErrorMessageWithMessage_displaysTheMessage() {
@@ -26,7 +28,8 @@ final class HelloWorldViewControllerTests: SnaphshotTestCase {
 
         sut.display(errorMessage: "An error message :(")
 
-        assert(sut)
+        assert(sut, mode: .light, identifier: "light")
+        assert(sut, mode: .dark, identifier: "dark")
     }
 
     // MARK: - Helpers
@@ -36,8 +39,11 @@ final class HelloWorldViewControllerTests: SnaphshotTestCase {
         let storyboard = UIStoryboard(name: "Main", bundle: bundle)
         let viewController = storyboard.instantiateInitialViewController() as! ViewController
 
-        viewController.loadViewIfNeeded()
+        let window = UIWindow()
+        window.rootViewController = viewController
+        window.makeKeyAndVisible()
 
+        viewController.loadViewIfNeeded()
         return viewController
     }
 }
