@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		3820D779260BFEEF0012917B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3820D778260BFEEF0012917B /* Assets.xcassets */; };
 		3820D77C260BFEEF0012917B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3820D77A260BFEEF0012917B /* LaunchScreen.storyboard */; };
 		3820D7A9260BFFE30012917B /* HelloWorldViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3820D7A8260BFFE30012917B /* HelloWorldViewControllerTests.swift */; };
+		3820D7B6260C04000012917B /* FBSnapshotTestCase.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3820D7B5260C04000012917B /* FBSnapshotTestCase.xcframework */; };
+		38474E5226111CB1004CAC66 /* SnaphshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38474E5126111CB1004CAC66 /* SnaphshotTestCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		3820D782260BFEEF0012917B /* HelloWorldAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloWorldAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3820D788260BFEEF0012917B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3820D7A8260BFFE30012917B /* HelloWorldViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorldViewControllerTests.swift; sourceTree = "<group>"; };
+		3820D7B5260C04000012917B /* FBSnapshotTestCase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FBSnapshotTestCase.xcframework; path = Carthage/Build/FBSnapshotTestCase.xcframework; sourceTree = "<group>"; };
+		38474E5126111CB1004CAC66 /* SnaphshotTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnaphshotTestCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3820D7B6260C04000012917B /* FBSnapshotTestCase.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +69,7 @@
 				3820D76E260BFEEF0012917B /* HelloWorldApp */,
 				3820D785260BFEEF0012917B /* HelloWorldAppTests */,
 				3820D76D260BFEEF0012917B /* Products */,
+				3820D7B4260C04000012917B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,9 +100,18 @@
 			isa = PBXGroup;
 			children = (
 				3820D7A8260BFFE30012917B /* HelloWorldViewControllerTests.swift */,
+				38474E5126111CB1004CAC66 /* SnaphshotTestCase.swift */,
 				3820D788260BFEEF0012917B /* Info.plist */,
 			);
 			path = HelloWorldAppTests;
+			sourceTree = "<group>";
+		};
+		3820D7B4260C04000012917B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3820D7B5260C04000012917B /* FBSnapshotTestCase.xcframework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38474E5226111CB1004CAC66 /* SnaphshotTestCase.swift in Sources */,
 				3820D7A9260BFFE30012917B /* HelloWorldViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
